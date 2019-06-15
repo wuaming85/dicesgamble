@@ -223,6 +223,7 @@ showHand_com = function(result){
         }
       #最大對子一樣
         if(length(which(maxdup==max(maxdup)))!=1 & nrow(unique(dup))!=1){
+          winer=result_winer$id[which(maxdup==max(maxdup))]
           result_winer1=result_winer[which(maxdup==max(maxdup)),]
           dup1=array(0,dim=c(nrow(result_winer1),2))
           maxdup1=array(0,nrow(result_winer1))
@@ -234,13 +235,13 @@ showHand_com = function(result){
             dup1[i,]=sort(dup1[i,])
             maxdup1[i]=dup1[i,2]
           }
-          winer=result_winer1$id[which(dup1[,1]==max(dup1[,1]))]
+          winer=data.frame(result_winer1)$id[which(dup1[,1]==max(dup1[,1]))]
           if(nrow(unique(dup1))==1){
             single=array(0,nrow(result_winer1))
             for(i in 1:nrow(result_winer1)){
               single[i]=record[[i]]$Var1[which(record[[i]]$Freq==1)]
             }
-            winer=result_winer1$id[which(single==max(single))]
+            winer=result_winer1$id[which.max(single))]
             if(length(unique(single))==1){
             winer=result_winer1$id[which(single==max(single))]
             }
