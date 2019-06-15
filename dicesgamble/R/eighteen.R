@@ -121,10 +121,10 @@ if(any(time$Freq==2)&any(time$Freq==1)){
 score=sum(as.numeric(time$dies[which(time$Freq!=2)]))
 }
 if(all(time$Freq==4)){
-  if(all(time$diesreplace==1)){
+  score=(time$dies)^4
+  if(all(time$dies==1)){
     score=15
   }
-  score=(time$diesreplace)^4
 }
 ##############################
 if(mark==1){
