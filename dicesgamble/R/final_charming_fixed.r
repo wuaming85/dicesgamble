@@ -85,7 +85,7 @@ showHand_com = function(result){
       result_winer[j,1:5]=sort(result_winer[j,1:5])
       }
       ####五個都一樣，則平手####
-      if(nrow(unique(result_winer[,1:5]))==1) winer = "Tie game"
+      if(nrow(unique(result_winer[,1:5]))==1)  winer = "Tie game"
       dup=array(0,nrow(result_winer))###重複4次的數###
       for(i in 1:nrow(result_winer)){
       record[[i]]=data.frame(table(as.numeric(result_winer[i,1:5])))
@@ -109,7 +109,7 @@ showHand_com = function(result){
         single[j]=record[[j]]$Var1[which(record[[i]]$Freq==1)]
        }
        winer = result_winer$id[which(single==max(single))]
-       if(length(unique(single))<length(single)) winer ="Tie game"
+       if(length(unique(single))<length(single)) winer = data.frame(result_winer)$id[which(single==max(single))]
       }
    #################一般比較########################
     }
@@ -142,7 +142,7 @@ showHand_com = function(result){
         for(j in 1:nrow(result_winer)){
           single[j]=record[[j]]$Var1[which(record[[j]]$Freq==2)]
         }
-        if(length(unique(single))<length(single)) winer = "Tie game"
+        if(length(unique(single))<length(single)) winer = data.frame(result_winer)$id[which(single==max(single))]
         winer = result_winer$id[which.max(single)]
       }
     }
@@ -183,7 +183,7 @@ showHand_com = function(result){
           single[j]=sum(record[[j]]$Var1[which(record[[i]]$Freq==1)])
         }
         winer = result_winer$id[which.max(single)]
-        if(length(unique(single))<length(single)) winer="Tie game"
+        if(length(unique(single))<length(single)) winer=data.frame(result_winer)$id[which(single==max(single))]
       }
       }
     if(all(result_winer$V6 == 4)){ #兩對比大小
@@ -219,7 +219,7 @@ showHand_com = function(result){
           }
           winer=result_winer$id[which.max(single)]
           if(length(unique(single))==1){
-            winer="Tie game"}
+            winer=data.frame(result_winer)$id[which(single==max(single))]}
         }
       #最大對子一樣
         if(length(which(maxdup==max(maxdup)))!=1 & nrow(unique(dup))!=1){
@@ -295,7 +295,7 @@ showHand_com = function(result){
         remain[i]=sum(result_winer[i,1:4])
         }
         winer = result_winer$id[which.max(remain)]
-        if(length(unique(remain))>1) winer="Tie game"
+        if(length(unique(remain))>1) winer=data.frame(result_winer)$id[which(remain==max(remain))]
       }
 
     }
