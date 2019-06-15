@@ -241,7 +241,7 @@ showHand_com = function(result){
             for(i in 1:nrow(result_winer1)){
               single[i]=record[[i]]$Var1[which(record[[i]]$Freq==1)]
             }
-            winer=result_winer1$id[which.max(single))]
+            winer=result_winer1$id[which.max(single)]
             if(length(unique(single))==1){
             winer=result_winer1$id[which(single==max(single))]
             }
