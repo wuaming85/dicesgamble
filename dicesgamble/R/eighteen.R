@@ -135,13 +135,13 @@ pointer=dies
 }
 ##############################
 if(scoreI > score){
-return(cat("You win!\n","Your score：",scoreI,"\n","playerscore：",score,"\n",pointer, "\n"))
+return(cat("You win!\n","Your score：",scoreI,"\n","vendor's score：",score,"\n",pointer, "\n"))
 }
 if(scoreI < score){
-return(cat("You lose!\n","Your score：",scoreI,"\n","playerscore：",score,"\n",pointer, "\n"))
+return(cat("You lose!\n","Your score：",scoreI,"\n","vendor's score：",score,"\n",pointer, "\n"))
 }
 if(scoreI == score){
-return(cat("Tie!\n","Your score：",scoreI,"\n","playerscore：", score,"\n",pointer,append = T,"\n"))
+return(cat("Tie!\n","Your score：",scoreI,"\n","vendor's score：", score,"\n",pointer,append = T,"\n"))
 }
 }
 
