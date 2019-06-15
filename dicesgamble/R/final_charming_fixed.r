@@ -235,7 +235,7 @@ showHand_com = function(result){
             dup1[i,]=sort(dup1[i,])
             maxdup1[i]=dup1[i,2]
           }
-          winer=data.frame(result_winer1)$id[which(dup1[,1]==max(dup1[,1]))]
+          winer=data.frame(result_winer1)$id[which.max(dup1[,1])]
           if(nrow(unique(dup1))==1){
             single=array(0,nrow(result_winer1))
             for(i in 1:nrow(result_winer1)){
