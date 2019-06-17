@@ -11,7 +11,7 @@ play_eighteen_la(dices)
 }
 \value{
 If the player doesn't play the second time, the function will return only score.
-If the player play the second time, it will return both score and the dices' points we get in the sceond time with array, and the first position of the return is score and another is points.
+If the player play the second time, it will return both score and the dices' points we get in the sceond time with array, and the first position of the return is score and another are points.
 }
 \description{
 After throwing a dice, we can calculate the score by rule.
