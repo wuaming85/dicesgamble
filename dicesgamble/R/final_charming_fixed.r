@@ -221,6 +221,7 @@ showHand_com = function(result){
           if(length(unique(single))==1){
             winer=data.frame(result_winer)$id[which(single==max(single))]}
         }
+        }
       #最大對子一樣
         if(length(which(maxdup==max(maxdup)))!=1 & nrow(unique(dup))!=1){
           winer=result_winer$id[which(maxdup==max(maxdup))]
@@ -246,7 +247,6 @@ showHand_com = function(result){
             winer=result_winer1$id[which(single==max(single))]
             }
             }
-        }
         }
       }
     if(all(result_winer$V6 == 3)){ #一對比大小
